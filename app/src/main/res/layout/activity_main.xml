@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/bg"
+    >
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="книги за 2023"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book0"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="-20dp"
+        android:backgroundTint="@color/grey"
+        android:onClick="click_book"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book2"
+        android:layout_width="185dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginLeft="-100dp"
+        android:backgroundTint="@color/grey"
+        android:paddingTop="0dp"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        android:onClick="click_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/book0"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book3"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="-100dp"
+        android:backgroundTint="@color/grey"
+
+        android:paddingTop="0dp"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        android:onClick="click_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/book2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book4"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="-85dp"
+        android:backgroundTint="@color/grey"
+
+        android:paddingTop="0dp"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        android:onClick="click_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/book3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book5"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="-85dp"
+        android:backgroundTint="@color/grey"
+
+        android:paddingTop="0dp"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        android:onClick="click_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/book4"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/regiment"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="45dp"
+        app:cornerRadius="0dp"
+        android:enabled="false"
+        android:backgroundTint="@color/brown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/book0"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book6"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="-20dp"
+        android:backgroundTint="@color/grey"
+        android:onClick="click_book"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/book0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book7"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="-80dp"
+        android:backgroundTint="@color/grey"
+        android:paddingTop="0dp"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        android:onClick="click_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/book6"
+        app:layout_constraintTop_toBottomOf="@id/book2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book8"
+        android:layout_width="185dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="-100dp"
+        android:backgroundTint="@color/grey"
+
+        android:paddingTop="0dp"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        android:onClick="click_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/book7"
+        app:layout_constraintTop_toBottomOf="@id/book3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book9"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="-105dp"
+        android:backgroundTint="@color/grey"
+
+        android:paddingTop="0dp"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        android:onClick="click_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/book8"
+        app:layout_constraintTop_toBottomOf="@id/book4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:id="@+id/book10"
+        android:layout_width="185dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginLeft="-100dp"
+        android:backgroundTint="@color/grey"
+
+        android:paddingTop="0dp"
+        android:rotation="-90"
+        android:textSize="20dp"
+        app:cornerRadius="2dp"
+        android:onClick="click_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/book9"
+        app:layout_constraintTop_toBottomOf="@id/book5" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/regiment2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="45dp"
+        app:cornerRadius="0dp"
+        android:enabled="false"
+        android:backgroundTint="@color/brown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/book6"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

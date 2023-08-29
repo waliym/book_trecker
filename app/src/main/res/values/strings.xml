@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">book tracker</string>
+    <string name="add_book">добавить</string>
+</resources>
