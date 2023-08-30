@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="bg">#CDFBF9</color>
+    <color name="white">#DACCCC</color>
+    <color name="bg1">#CDFBF9</color>
+    <color name="bg">#353E49</color>
     <color name="grey">#828383</color>
     <color name="pink">#F6BBBB</color>
-    <color name="green">#A8ED49</color>
-    <color name="purple">#852FA5</color>
+    <color name="green">#A5BE84</color>
+    <color name="purple">#9A64AE</color>
     <color name="red">#DD213E</color>
     <color name="brown">#875353</color>
+    <color name="brown1">#836C68</color>
     <color name="bg_new_book">#9C9CD8</color>
 </resources>

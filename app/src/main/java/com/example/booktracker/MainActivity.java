@@ -16,13 +16,13 @@ import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
     private EditText user_text;
-    private MaterialButton book0, book2, book1, book3, book4, book5, book6, book7, book8, book9, book10;
+    private MaterialButton book0, book2, book1, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12, book13, book14, book15;
     private int pink, green, purple, grey, red, brown;
     Dialog dialog;
     SharedPreferences sPref;
     SharedPreferences sTXT;
 
-    int SIZE_BOOK = 10;
+    int SIZE_BOOK = 15;
     String[] content_book = new String[SIZE_BOOK];
     MaterialButton[] boook = new MaterialButton[SIZE_BOOK];
     int[] color = new int[SIZE_BOOK];
@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
         book8 = findViewById(R.id.book8);
         book9 = findViewById(R.id.book9);
         book10 = findViewById(R.id.book10);
+        book11 = findViewById(R.id.book11);
+        book12 = findViewById(R.id.book12);
+        book13 = findViewById(R.id.book13);
+        book14 = findViewById(R.id.book14);
+        book15 = findViewById(R.id.book15);
 
 
             pink =  getResources().getColor(R.color.pink);
@@ -56,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             purple = getResources().getColor(R.color.purple);
             grey = getResources().getColor(R.color.grey);
             red = getResources().getColor(R.color.red);
-            brown = getResources().getColor(R.color.brown);
+            brown = getResources().getColor(R.color.brown1);
             dialog = new Dialog(MainActivity.this);
 
 
@@ -73,7 +78,13 @@ public class MainActivity extends AppCompatActivity {
                     :(i == 7 ? book8
                     :(i == 8 ? book9
                     :(i == 9 ? book10
-                    : book1))))))))));
+                    :(i == 10 ? book11
+                    :(i == 11 ? book12
+                    :(i == 12 ? book13
+                    :(i == 13 ? book14
+                    :(i == 14 ? book15
+
+                    : book1)))))))))))))));
             color[i] = 3;
         }
 
