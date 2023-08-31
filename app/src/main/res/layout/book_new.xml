@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
-    android:layout_height="350dp"
+    android:layout_height="450dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center">
     <androidx.cardview.widget.CardView
@@ -31,6 +31,22 @@
                 android:hint="Введите название книги"
                 android:background="#fff"
                 />
+
+            <EditText
+                android:id="@+id/author_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_text"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:paddingLeft="15dp"
+                android:hint="Автор"
+                android:background="#fff"
+                />
+
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/c1"

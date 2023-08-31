@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,15 +17,17 @@ import com.google.android.material.button.MaterialButton;
 
 
 public class MainActivity extends AppCompatActivity {
-    private EditText user_text;
+    private EditText user_text, author_text;
+    private TextView name;
     private MaterialButton book0, book2, book1, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12, book13, book14, book15;
     private int pink, green, purple, grey, red, brown;
-    Dialog dialog;
+    Dialog dialog, setting;
     SharedPreferences sPref;
     SharedPreferences sTXT;
 
     int SIZE_BOOK = 15;
     String[] content_book = new String[SIZE_BOOK];
+    String[] author_book = new String[SIZE_BOOK];
     MaterialButton[] boook = new MaterialButton[SIZE_BOOK];
     int[] color = new int[SIZE_BOOK];
 
@@ -36,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        name = findViewById(R.id.name);
+
 
 
 
@@ -63,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
             red = getResources().getColor(R.color.red);
             brown = getResources().getColor(R.color.brown1);
             dialog = new Dialog(MainActivity.this);
+            setting = new Dialog(MainActivity.this);
+
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.bg));
 
 
 
@@ -112,17 +121,16 @@ public class MainActivity extends AppCompatActivity {
                 :(color[i] == 5 ? brown_btn
                 : grey_btn)))))).getIcon().setAlpha(255);
 
-        saveColor();
+        saveColor(i);
     }
-    public void saveColor () {
+    public void saveColor (int i) {
 
 
         sPref = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
-        for (int i = 0; i < SIZE_BOOK; i++)
-        {
+
             ed.putInt("kc"+i, color[i]);
-        }
+
         ed.commit();
 
 
@@ -188,10 +196,10 @@ public class MainActivity extends AppCompatActivity {
 
         sTXT = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor txt = sTXT.edit();
-        for (int j = 0; j < SIZE_BOOK; j++)
-        {
-            txt.putString("save_nameBook"+j,content_book[j]);
-        }
+
+            txt.putString("save_nameBook"+i,content_book[i]);
+            txt.putString("save_autor"+i, author_book[i]);
+
         txt.commit();
 
     }
@@ -208,12 +216,14 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < SIZE_BOOK; i++)
         {
             content_book[i] = sTXT.getString("save_nameBook"+i, "");
+            author_book[i] = sTXT.getString("save_autor"+i, "");
         }
         for (int i = 0; i < SIZE_BOOK; i++)
         {
             String str_book = content_book[i];
             setnameBook(str_book, boook[i]);
         }
+        name.setText(sTXT.getString("save_name1", ""));
     }
 
     public void click_book(View v)
@@ -224,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
         {
             if(bk.getId() == boook[i].getId())
             {
+
 
                 Click_bookn(color, i, bk);
             }
@@ -245,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
         MaterialButton purple_btn = dialog.findViewById(R.id.c1);
 
         user_text = dialog.findViewById(R.id.user_text);
+        author_text = dialog.findViewById(R.id.author_text);
 
         String book_btn = book1.getText().toString();
         if (!book_btn.isEmpty())
@@ -252,6 +264,7 @@ public class MainActivity extends AppCompatActivity {
             user_text.setText(content_book[i]);
 
         }
+        author_text.setText(author_book[i]);
 
         Click_color(purple_btn, green_btn, pink_btn, grey_btn, red_btn, brown_btn, colorn, i);
 
@@ -311,6 +324,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+
+                author_book[i] = author_text.getText().toString();
                 Click_add_book(book1);
                 dialog.cancel();
             }
@@ -322,6 +337,48 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void click_setting(View view) {
+        setting.setContentView(R.layout.setting);
+        setting.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        EditText text_name1 = setting.findViewById(R.id.text_name1);
+        MaterialButton btn_set_name1 = setting.findViewById(R.id.btn_set_name1);
+        ImageButton exit_setting = setting.findViewById(R.id.exit_setting);
+        MaterialButton btn_cleaner = setting.findViewById(R.id.btn_cleaner);
+        text_name1.setText(name.getText().toString());
+
+        btn_set_name1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                name.setText(text_name1.getText().toString());
+                sTXT = getPreferences(MODE_PRIVATE);
+                SharedPreferences.Editor txt = sTXT.edit();
+                txt.putString("save_name1", text_name1.getText().toString());
+                txt.commit();
+            }
+        });
+        exit_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setting.cancel();
+            }
+        });
+
+        btn_cleaner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for (int i = 0; i < SIZE_BOOK; i++)
+                {
+                    content_book[i] = "";
+                    author_book[i] = "";
+                    color[i] = 3;
+                    setColor(color, boook[i], i);
+                    setnameBook("", boook[i]);
+                    saveColor(i);
+                }
+            }
+        });
 
 
+        setting.show();
+    }
 }
