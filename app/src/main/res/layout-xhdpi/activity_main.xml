@@ -26,10 +26,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book0"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginLeft="-35dp"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="-25dp"
         android:backgroundTint="@color/grey"
         android:onClick="click_book"
         android:rotation="-90"
@@ -43,10 +43,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book2"
-        android:layout_width="185dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="155dp"
-        android:layout_marginLeft="-105dp"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="-95dp"
         android:backgroundTint="@color/grey"
         android:paddingTop="0dp"
         android:rotation="-90"
@@ -61,10 +61,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book3"
-        android:layout_width="145dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="-100dp"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginLeft="-90dp"
         android:backgroundTint="@color/grey"
 
         android:paddingTop="0dp"
@@ -80,10 +80,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book4"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginLeft="-85dp"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="-75dp"
         android:backgroundTint="@color/grey"
 
         android:paddingTop="0dp"
@@ -99,10 +99,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book5"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginLeft="-85dp"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="-75dp"
         android:backgroundTint="@color/grey"
 
         android:paddingTop="0dp"
@@ -126,7 +126,7 @@
 
         app:layout_constraintVertical_bias="1.1"
         android:layout_marginRight="-10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="0dp"
 
         />
     <com.google.android.material.button.MaterialButton
@@ -135,7 +135,7 @@
         android:layout_height="20dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="30dp"
         app:cornerRadius="0dp"
         android:enabled="false"
         android:backgroundTint="@color/brown"
@@ -155,16 +155,16 @@
         app:layout_constraintTop_toBottomOf="@id/regiment"
         app:layout_constraintVertical_bias="1.2"
         android:layout_marginLeft="-15dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginBottom="-5dp"
 
         />
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book6"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="10dp"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="20dp"
         android:backgroundTint="@color/grey"
         android:onClick="click_book"
         android:rotation="-90"
@@ -178,10 +178,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book7"
-        android:layout_width="145dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="-80dp"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="-70dp"
         android:backgroundTint="@color/grey"
         android:paddingTop="0dp"
         android:rotation="-90"
@@ -196,10 +196,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book8"
-        android:layout_width="185dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="135dp"
-        android:layout_marginLeft="-100dp"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="-90dp"
         android:backgroundTint="@color/grey"
 
         android:paddingTop="0dp"
@@ -215,10 +215,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book9"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginLeft="-105dp"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="-95dp"
         android:backgroundTint="@color/grey"
 
         android:paddingTop="0dp"
@@ -234,10 +234,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book10"
-        android:layout_width="185dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="145dp"
-        android:layout_marginLeft="-100dp"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="-95dp"
         android:backgroundTint="@color/grey"
 
         android:paddingTop="0dp"
@@ -255,7 +255,7 @@
         android:layout_height="20dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="35dp"
         app:cornerRadius="0dp"
         android:enabled="false"
         android:backgroundTint="@color/brown"
@@ -269,9 +269,9 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book11"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="210dp"
+        android:layout_width="145dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="175dp"
         android:layout_marginLeft="10dp"
         android:backgroundTint="@color/grey"
         android:onClick="click_book"
@@ -285,8 +285,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/book12"
-        android:layout_width="145dp"
-        android:layout_height="55dp"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="-8dp"
         android:layout_marginLeft="20dp"
 
@@ -305,9 +305,9 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book13"
-        android:layout_width="185dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="145dp"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="125dp"
         android:layout_marginLeft="-50dp"
         android:backgroundTint="@color/grey"
 
@@ -324,10 +324,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book14"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="142dp"
-        android:layout_marginLeft="-100dp"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginLeft="-90dp"
         android:backgroundTint="@color/grey"
 
         android:paddingTop="0dp"
@@ -343,10 +343,10 @@
     <com.google.android.material.button.MaterialButton
         android:contentDescription="Enter How Much Cookies You Want"
         android:id="@+id/book15"
-        android:layout_width="185dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="145dp"
-        android:layout_marginLeft="-103dp"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="-90dp"
         android:backgroundTint="@color/grey"
 
         android:paddingTop="0dp"

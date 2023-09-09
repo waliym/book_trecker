@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -20,16 +22,22 @@ public class MainActivity extends AppCompatActivity {
     private EditText user_text, author_text;
     private TextView name;
     private MaterialButton book0, book2, book1, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12, book13, book14, book15;
-    private int pink, green, purple, grey, red, brown;
+    private int pink, green, purple, grey, red, brown, bg, bg1, bg2;
     Dialog dialog, setting;
     SharedPreferences sPref;
     SharedPreferences sTXT;
+    ConstraintLayout bg_act1;
 
     int SIZE_BOOK = 15;
     String[] content_book = new String[SIZE_BOOK];
     String[] author_book = new String[SIZE_BOOK];
     MaterialButton[] boook = new MaterialButton[SIZE_BOOK];
     int[] color = new int[SIZE_BOOK];
+    int colorBg = 0;
+
+
+
+
 
 
 
@@ -41,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         name = findViewById(R.id.name);
+        bg_act1 = findViewById(R.id.bg_act1);
 
 
 
@@ -67,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
             purple = getResources().getColor(R.color.purple);
             grey = getResources().getColor(R.color.grey);
             red = getResources().getColor(R.color.red);
+
+            bg = getResources().getColor(R.color.bg);
+            bg1 = getResources().getColor(R.color.bg1);
+            bg2 = getResources().getColor(R.color.bg2);
+
             brown = getResources().getColor(R.color.brown1);
             dialog = new Dialog(MainActivity.this);
             setting = new Dialog(MainActivity.this);
@@ -100,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     loadColor();
     loadText();
+
     }
 
 
@@ -166,6 +181,8 @@ public class MainActivity extends AppCompatActivity {
 
             setColor(color, bk, i);
         }
+        colorBg = sPref.getInt("sbg", 0);
+        setBgColor(colorBg);
     }
 
     public void setnameBook(String book_str, MaterialButton book)
@@ -271,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
         purple_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                colorn[0] = 0;
+                color[i] = 0;
                 Click_color(purple_btn, green_btn, pink_btn, grey_btn, red_btn, brown_btn, color, i);
                 book1.setBackgroundColor(purple);
 
@@ -342,9 +359,13 @@ public class MainActivity extends AppCompatActivity {
         setting.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         EditText text_name1 = setting.findViewById(R.id.text_name1);
         MaterialButton btn_set_name1 = setting.findViewById(R.id.btn_set_name1);
+        MaterialButton cbg = setting.findViewById(R.id.cbg);
+        MaterialButton cbg1 = setting.findViewById(R.id.cbg1);
+        MaterialButton cbg2 = setting.findViewById(R.id.cbg2);
         ImageButton exit_setting = setting.findViewById(R.id.exit_setting);
         MaterialButton btn_cleaner = setting.findViewById(R.id.btn_cleaner);
         text_name1.setText(name.getText().toString());
+        ClickBgColor(colorBg, cbg, cbg1, cbg2);
 
         btn_set_name1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -378,7 +399,82 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        cbg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                colorBg = 0;
+                ClickBgColor(colorBg, cbg, cbg1, cbg2);
+                bg_act1.setBackgroundColor(bg);
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg));
+
+            }
+        });
+        cbg1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                colorBg = 1;
+                ClickBgColor(colorBg, cbg, cbg1, cbg2);
+                bg_act1.setBackgroundColor(bg1);
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg1));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg1));
+            }
+        });
+        cbg2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                colorBg = 2;
+                ClickBgColor(colorBg, cbg, cbg1, cbg2);
+                bg_act1.setBackgroundColor(bg2);
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg2));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg2));
+            }
+        });
+
 
         setting.show();
     }
+
+    public void ClickBgColor(int colorBg, MaterialButton cbg, MaterialButton cbg1, MaterialButton cbg2)
+    {
+        cbg.getIcon().setAlpha(0);
+        cbg1.getIcon().setAlpha(0);
+        cbg2.getIcon().setAlpha(0);
+        (colorBg == 0 ? cbg
+                : (colorBg == 1 ? cbg1
+                : (colorBg == 2 ? cbg2
+                : cbg))).getIcon().setAlpha(255);
+
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+
+        ed.putInt("sbg", colorBg);
+
+        ed.commit();
+
+    }
+    public void setBgColor (int colorBg)
+    {
+        switch (colorBg)
+        {
+            case 0:
+                bg_act1.setBackgroundColor(bg);
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg));
+                break;
+            case 1:
+                bg_act1.setBackgroundColor(bg1);
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg1));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg1));
+                break;
+            case 2:
+                bg_act1.setBackgroundColor(bg2);
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg2));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg2));
+                break;
+        }
+    }
+
+
+
 }

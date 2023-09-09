@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">book tracker</string>
+    <string name="app_name">Bookshelf</string>
     <string name="add_book">добавить</string>
-    <string name="name">Книжный клуб</string>
     <string name="hint_name1">Название библиотеки</string>
 </resources>

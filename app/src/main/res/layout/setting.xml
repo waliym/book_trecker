@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
-    android:layout_height="300dp"
+    android:layout_height="350dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center">
     <androidx.cardview.widget.CardView
@@ -77,6 +77,69 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cleaner_text"
                 android:text="Очистить"
+                />
+            <TextView
+                android:id="@+id/bg_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_cleaner"
+                android:text="Цвет фона"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#fff"
+
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cbg"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="50dp"
+
+                android:backgroundTint="@color/bg"
+                app:cornerRadius="100px"
+                app:icon="@android:drawable/ic_delete"
+                app:iconGravity="textTop"
+                app:iconPadding="0dp"
+                app:iconSize="22dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bg_text"
+                app:layout_constraintVertical_bias="0.495" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cbg1"
+                app:cornerRadius="100px"
+                app:icon="@android:drawable/ic_delete"
+                app:iconPadding="0dp"
+                app:iconGravity="textTop"
+                app:iconSize="22dp"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                app:layout_constraintStart_toEndOf="@id/cbg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bg_text"
+                android:layout_marginLeft="40dp"
+                android:backgroundTint="@color/bg1"
+
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cbg2"
+                app:cornerRadius="100px"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                app:icon="@android:drawable/ic_delete"
+                app:iconPadding="0dp"
+                app:iconGravity="textTop"
+                app:iconSize="22dp"
+                app:layout_constraintStart_toEndOf="@id/cbg1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bg_text"
+                android:layout_marginLeft="40dp"
+                android:backgroundTint="@color/bg2"
+
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
