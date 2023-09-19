@@ -29,6 +29,7 @@
                 android:layout_marginLeft="15dp"
                 android:paddingLeft="15dp"
                 android:hint="Введите название книги"
+                android:textSize="17dp"
                 android:background="#fff"
                 />
 
@@ -44,6 +45,7 @@
                 android:layout_marginLeft="25dp"
                 android:paddingLeft="15dp"
                 android:hint="Автор"
+                android:textSize="17dp"
                 android:background="#fff"
                 />
 

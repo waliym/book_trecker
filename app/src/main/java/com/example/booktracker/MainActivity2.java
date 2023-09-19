@@ -7,6 +7,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -18,8 +20,7 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.material.button.MaterialButton;
 
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
     private EditText user_text, author_text;
     private TextView name;
     private MaterialButton book0, book2, book1, book3, book4, book5, book6, book7, book8, book9, book10, book11, book12, book13, book14, book15;
@@ -36,24 +37,17 @@ public class MainActivity extends AppCompatActivity {
     int[] color = new int[SIZE_BOOK];
     int colorBg = 0;
 
-
-
-
-
-
-
-
-
+    private Animation left_anim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_main2);
         Intent intent = getIntent();
-        String value = intent.getStringExtra("keyy");
+        String value = intent.getStringExtra("key");
+
         name = findViewById(R.id.name);
-        bg_act1 = findViewById(R.id.bg_act1);
+        bg_act1 = findViewById(R.id.bg_act2);
 
 
 
@@ -75,19 +69,19 @@ public class MainActivity extends AppCompatActivity {
         book15 = findViewById(R.id.book15);
 
 
-            pink =  getResources().getColor(R.color.pink);
-            green = getResources().getColor(R.color.green);
-            purple = getResources().getColor(R.color.purple);
-            grey = getResources().getColor(R.color.grey);
-            red = getResources().getColor(R.color.red);
+        pink =  getResources().getColor(R.color.pink);
+        green = getResources().getColor(R.color.green);
+        purple = getResources().getColor(R.color.purple);
+        grey = getResources().getColor(R.color.grey);
+        red = getResources().getColor(R.color.red);
 
-            bg = getResources().getColor(R.color.bg);
-            bg1 = getResources().getColor(R.color.bg1);
-            bg2 = getResources().getColor(R.color.bg2);
+        bg = getResources().getColor(R.color.bg);
+        bg1 = getResources().getColor(R.color.bg1);
+        bg2 = getResources().getColor(R.color.bg2);
 
-            brown = getResources().getColor(R.color.brown1);
-            dialog = new Dialog(MainActivity.this);
-            setting = new Dialog(MainActivity.this);
+        brown = getResources().getColor(R.color.brown1);
+        dialog = new Dialog(MainActivity2.this);
+        setting = new Dialog(MainActivity2.this);
 
         getWindow().setNavigationBarColor(getResources().getColor(R.color.bg));
 
@@ -115,13 +109,12 @@ public class MainActivity extends AppCompatActivity {
             color[i] = 3;
         }
 
+        left_anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.to_right_in);
 
-    loadColor();
-    loadText();
 
+        loadColor();
+        loadText();
     }
-
-
 
     public void Click_color(MaterialButton purple_btn, MaterialButton green_btn, MaterialButton pink_btn,
                             MaterialButton grey_btn, MaterialButton red_btn, MaterialButton brown_btn,  int[] color, int i)
@@ -148,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
         sPref = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
 
-            ed.putInt("kc"+i, color[i]);
+        ed.putInt("kc"+i, color[i]);
 
         ed.commit();
 
@@ -218,8 +211,8 @@ public class MainActivity extends AppCompatActivity {
         sTXT = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor txt = sTXT.edit();
 
-            txt.putString("save_nameBook"+i,content_book[i]);
-            txt.putString("save_autor"+i, author_book[i]);
+        txt.putString("save_nameBook"+i,content_book[i]);
+        txt.putString("save_autor"+i, author_book[i]);
 
         txt.commit();
 
@@ -409,8 +402,8 @@ public class MainActivity extends AppCompatActivity {
                 colorBg = 0;
                 ClickBgColor(colorBg, cbg, cbg1, cbg2);
                 bg_act1.setBackgroundColor(bg);
-                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg));
-                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg));
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg));
 
             }
         });
@@ -420,8 +413,8 @@ public class MainActivity extends AppCompatActivity {
                 colorBg = 1;
                 ClickBgColor(colorBg, cbg, cbg1, cbg2);
                 bg_act1.setBackgroundColor(bg1);
-                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg1));
-                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg1));
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg1));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg1));
             }
         });
         cbg2.setOnClickListener(new View.OnClickListener() {
@@ -430,8 +423,8 @@ public class MainActivity extends AppCompatActivity {
                 colorBg = 2;
                 ClickBgColor(colorBg, cbg, cbg1, cbg2);
                 bg_act1.setBackgroundColor(bg2);
-                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg2));
-                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg2));
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg2));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg2));
             }
         });
 
@@ -463,28 +456,36 @@ public class MainActivity extends AppCompatActivity {
         {
             case 0:
                 bg_act1.setBackgroundColor(bg);
-                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg));
-                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg));
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg));
                 break;
             case 1:
                 bg_act1.setBackgroundColor(bg1);
-                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg1));
-                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg1));
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg1));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg1));
                 break;
             case 2:
                 bg_act1.setBackgroundColor(bg2);
-                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg2));
-                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this,R.color.bg2));
+                getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg2));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity2.this,R.color.bg2));
                 break;
         }
     }
 
 
-    public void click_next(View view) {
-        Intent myIntent = new Intent(MainActivity.this, MainActivity2.class);
-        myIntent.putExtra("key", 0);
-        MainActivity.this.startActivity(myIntent);
-        overridePendingTransition(R.anim.to_left_in, R.anim.to_left_out);
+    public void click_back(View view) {
+
+        Intent myIntent = new Intent(MainActivity2.this, MainActivity.class);
+        myIntent.putExtra("keyy", 0);
+
+
+
+
+        MainActivity2.this.startActivity(myIntent);
+        overridePendingTransition(R.anim.to_right_in, R.anim.to_right_out);
+
+
+
 
 
     }

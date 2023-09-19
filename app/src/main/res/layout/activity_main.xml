@@ -387,4 +387,15 @@
         android:onClick="click_setting"
         />
 
+    <ImageButton
+        android:id="@+id/next_btn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:onClick="click_next"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/next_act"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/setting_btn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
